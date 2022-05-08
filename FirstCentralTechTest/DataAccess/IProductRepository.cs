@@ -9,6 +9,6 @@ namespace FirstCentralTechTest.DataAccess
 {
     public interface IProductRepository
     {
-        public Product Get(string sku);
+        public Product? Get(string sku);
     }
 }

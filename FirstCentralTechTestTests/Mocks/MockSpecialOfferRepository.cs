@@ -16,9 +16,12 @@ namespace FirstCentralTechTestTests.Mocks
             { "B15", new SpecialOffer("B15", 2, 0.30) }
         };
 
-        public SpecialOffer Get(string sku)
+        public SpecialOffer? Get(string sku)
         {
-            return _specialOffers[sku];
+            if (_specialOffers.ContainsKey(sku))
+                return _specialOffers[sku];
+
+            return null;
         }
     }
 }

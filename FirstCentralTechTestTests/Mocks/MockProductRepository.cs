@@ -17,9 +17,11 @@ namespace FirstCentralTechTestTests.Mocks
             { "C40", new Product("C40", 0.60) }
         };
 
-        public Product Get(string sku)
+        public Product? Get(string sku)
         {
-            return _products[sku];
+            if (_products.ContainsKey(sku))
+                return _products[sku];
+            return null;
         }
     }
 }

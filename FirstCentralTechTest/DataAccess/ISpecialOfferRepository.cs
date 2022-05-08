@@ -4,6 +4,6 @@ namespace FirstCentralTechTest.DataAccess
 {
     public interface ISpecialOfferRepository
     {
-        public SpecialOffer Get(string sku);
+        public SpecialOffer? Get(string sku);
     }
 }
