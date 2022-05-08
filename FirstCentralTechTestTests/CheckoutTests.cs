@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FirstCentralTechTestTests
 {
     [TestClass]
-    public class ProductTests
+    public class CheckoutTests
     {
         [TestMethod]
         public void TestScanItem()
