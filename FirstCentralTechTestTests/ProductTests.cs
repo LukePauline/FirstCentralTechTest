@@ -21,6 +21,7 @@ namespace FirstCentralTechTestTests
             Assert.IsTrue(checkout.Cart["A99"] == 1);
         }
 
+        [TestMethod]
         public void TestGetTotalPrice()
         {
             // Arrange

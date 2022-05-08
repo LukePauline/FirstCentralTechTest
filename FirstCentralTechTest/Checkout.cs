@@ -24,7 +24,16 @@ namespace FirstCentralTechTest
 
         public double GetTotal()
         {
-            throw new NotImplementedException();
+            // could do this with linq but the special offer logic could get a bit messy in a lambda
+            double subtotal = 0;
+
+            foreach (var item in Cart)
+            {
+                var product = _productRepository.Get(item.Key);
+                subtotal += product.UnitPrice * item.Value;
+            }
+
+            return subtotal;
         }
     }
 }
