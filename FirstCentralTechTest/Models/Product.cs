@@ -6,16 +6,5 @@ using System.Threading.Tasks;
 
 namespace FirstCentralTechTest.Models
 {
-    public class Product
-    {
-        public Product(string sku, double unitPrice)
-        {
-            Sku = sku;
-            UnitPrice = unitPrice;
-        }
-
-        public string Sku { get; set; }
-
-        public double UnitPrice { get;set; }
-    }
+    public record Product(string Sku, double UnitPrice);
 }
