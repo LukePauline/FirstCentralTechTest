@@ -8,6 +8,7 @@ using FirstCentralTechTest.Models;
 
 namespace FirstCentralTechTestTests.Mocks
 {
+    // In a real situation, I probably would've looked into mocking these repositories with a mocking framework like Moq but this works just fine
     internal class MockProductRepository : IProductRepository
     {
         Dictionary<string, Product> _products = new Dictionary<string, Product>()
@@ -21,6 +22,7 @@ namespace FirstCentralTechTestTests.Mocks
         {
             if (_products.ContainsKey(sku))
                 return _products[sku];
+
             return null;
         }
     }

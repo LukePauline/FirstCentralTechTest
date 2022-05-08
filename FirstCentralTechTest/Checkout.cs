@@ -3,6 +3,8 @@ using FirstCentralTechTest.Models;
 
 namespace FirstCentralTechTest
 {
+    // Ideally, this class would implement an interface so any future objects that depended on this could be tested with a mock
+    // I've only implemented logic required for the test but I'd assume that it would also need methods for removing items, flagging age restrictions etc.
     public class Checkout
     {
         private readonly IProductRepository _productRepository;
@@ -21,6 +23,7 @@ namespace FirstCentralTechTest
             var product = _productRepository.Get(sku);
 
             // should probably indicate here that the product doesn't exist rather than just returning
+            // could return a boolean or if it were more complex, a enum describing the status of the scan
             if (product == null)
                 return;
 
@@ -32,7 +35,6 @@ namespace FirstCentralTechTest
 
         public double GetTotal()
         {
-            // could do this with linq but the special offer logic could get a bit messy in a lambda
             double subtotal = 0;
 
             foreach (var item in Cart)
@@ -45,6 +47,8 @@ namespace FirstCentralTechTest
                 }
                 else
                 {
+                    // Working under the assumption here that for an with quantity of 3, offer price applies to each group of 3 and any remainder is charged regularly
+                    // I would want to check that assumption is correct if carrying this forward
                     var offers = item.Value / specialOffer.Quantity;
                     var extra = item.Value % specialOffer.Quantity;
                     subtotal += specialOffer.Price * offers;
