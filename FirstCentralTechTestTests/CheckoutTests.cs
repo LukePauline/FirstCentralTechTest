@@ -12,7 +12,8 @@ namespace FirstCentralTechTestTests
         {
             // Arrange
             var productRepo = new MockProductRepository();
-            var checkout = new Checkout(productRepo);
+            var specialOfferRepo = new MockSpecialOfferRepository();
+            var checkout = new Checkout(productRepo, specialOfferRepo);
 
             // Act
             checkout.ScanItem("A99");
@@ -26,18 +27,20 @@ namespace FirstCentralTechTestTests
         {
             // Arrange
             var productRepo = new MockProductRepository();
-            var checkout = new Checkout(productRepo);
+            var specialOfferRepo = new MockSpecialOfferRepository();
+            var checkout = new Checkout(productRepo, specialOfferRepo);
 
             // Act
             checkout.ScanItem("A99");
             checkout.ScanItem("A99");
             checkout.ScanItem("A99");
             checkout.ScanItem("B15");
+            checkout.ScanItem("B15");
             checkout.ScanItem("C40");
             checkout.ScanItem("B15");
 
             // Assert
-            Assert.IsTrue(checkout.GetTotal() == 2.7);
+            Assert.IsTrue(checkout.GetTotal() == 2.65);
         }
     }
 }

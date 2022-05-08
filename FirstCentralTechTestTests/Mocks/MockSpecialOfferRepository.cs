@@ -12,8 +12,8 @@ namespace FirstCentralTechTestTests.Mocks
     {
         Dictionary<string, SpecialOffer> _specialOffers = new Dictionary<string, SpecialOffer>()
         {
-            { "A99", new SpecialOffer("A99", 3, 0.50) },
-            { "B15", new SpecialOffer("B15", 2, 0.30) }
+            { "A99", new SpecialOffer("A99", 3, 1.30) },
+            { "B15", new SpecialOffer("B15", 2, 0.45) }
         };
 
         public SpecialOffer? Get(string sku)
