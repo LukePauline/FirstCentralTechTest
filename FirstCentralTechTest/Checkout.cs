@@ -12,16 +12,14 @@ namespace FirstCentralTechTest
             _productRepository = productRepository;
         }
 
-        public double SubTotal => Cart.Sum(x => x.Value * x.Key.UnitPrice);
-        public Dictionary<Product, int> Cart { get; set; } = new Dictionary<Product, int>();
+        public Dictionary<string, int> Cart { get; set; } = new Dictionary<string, int>();
 
         public void ScanItem(string sku)
         {
-            var product = _productRepository.Get(sku);
-            if (Cart.ContainsKey(product))
-                Cart[product]++;
+            if (Cart.ContainsKey(sku))
+                Cart[sku]++;
             else
-                Cart.Add(product, 1);
+                Cart.Add(sku, 1);
         }
     }
 }
