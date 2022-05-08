@@ -1,7 +1,6 @@
 ﻿namespace FirstCentralTechTest
 {
-    public class Class1
+    public class Checkout
     {
-
     }
 }
