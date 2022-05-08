@@ -7,6 +7,7 @@ namespace FirstCentralTechTestTests
     [TestClass]
     public class CheckoutTests
     {
+        // In the future would probably want to cover this functionality with a few more tests. e.g. scanning multiple items
         [TestMethod]
         public void TestScanItem()
         {
