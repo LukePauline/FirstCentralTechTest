@@ -21,5 +21,10 @@ namespace FirstCentralTechTest
             else
                 Cart.Add(sku, 1);
         }
+
+        public double GetTotal()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
